@@ -1,0 +1,5 @@
+com\pwdim\tutorial\events\ChatEvent.class
+com\pwdim\tutorial\TUTORIAL.class
+com\pwdim\tutorial\utils\ColorUtils.class
+com\pwdim\tutorial\commands\TestCommand.class
+com\pwdim\tutorial\events\LobbyListener.class

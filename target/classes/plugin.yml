@@ -1,0 +1,15 @@
+name: TUTORIAL
+version: '1.0-SNAPSHOT'
+main: com.pwdim.tutorial.TUTORIAL
+api-version: '1.8'
+prefix: pwdimLobby
+commands:
+  broadcast:
+    description: Envia um alerta para todos os jogadores.
+    usage: /<command> <mensagem>
+    aliases: [ aviso, bd, alerta]
+    permission: lobby.broadcast # Permissão necessária
+permissions:
+  lobby.vip:
+    description: Permissoes vip do lobby
+    default: op

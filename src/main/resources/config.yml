@@ -1,0 +1,96 @@
+default-tag: "membro"
+
+tags:
+
+  pwdim:
+    priority: 1
+    permission: "tag.pwdim"
+    prefix: "&b&lADMIN &b"
+    name-color: "&b&o"
+    type: "&bAdmin "
+
+  admin:
+    priority: 10
+    permission: "tag.admin"
+    prefix: "&4&lADMIN &4"
+    name-color: "&4&o"
+    type: "&4Admin "
+
+
+  modplus:
+    priority: 20
+    permission: "tag.mod+"
+    prefix: "&5&lMOD+ &5"
+    name-color: "&5&o"
+    type: "&5Mod+ "
+
+  mod:
+    priority: 25
+    permission: "tag.mod"
+    prefix: "&5&lMOD &5"
+    name-color: "&5&o"
+    type: "&5Mod "
+
+  trial:
+    priority: 30
+    permission: "tag.trial"
+    prefix: "&5&lTRIAL &5"
+    name-color: "&5&o"
+    type: "&5Trial "
+
+  helper:
+    priority: 35
+    permission: "tag.helper"
+    prefix: "&9&lHELPER &9"
+    name-color: "&9&o"
+    type: "&9Helper "
+
+  ytplus:
+    priority: 40
+    permission: "tag.yt+"
+    prefix: "&3&lYT+ &3"
+    name-color: "&3&o"
+    type: "&3Partner+ "
+
+  partnerplus:
+    priority: 41
+    permission: "tag.yt+"
+    prefix: "&3&PARTNER+ &3"
+    name-color: "&3&o"
+    type: "&3Partner+ "
+
+  creatorplus:
+    priority: 42
+    permission: "tag.yt+"
+    prefix: "&3&CREATOR+ &3"
+    name-color: "&3&o"
+    type: "&3Partner+ "
+
+
+  yt:
+    priority: 50
+    permission: "tag.yt"
+    prefix: "&b&lYT &b"
+    name-color: "&b"
+    type: "&bPartner "
+
+  partner:
+    priority: 51
+    permission: "tag.yt"
+    prefix: "&b&lPARTNER &b"
+    name-color: "&b"
+    type: "&bPartner "
+
+  creator:
+    priority: 52
+    permission: "tag.yt"
+    prefix: "&b&lCREATOR &b"
+    name-color: "&b"
+    type: "&bPartner "
+
+  membro:
+    priority: 1000
+    permission: ""
+    prefix: "&7"
+    name-color: "&7"
+    type: "&7Membro "
