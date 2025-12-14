@@ -1,4 +1,11 @@
-C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\tutorial\events\LobbyListener.java
+C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\tutorial\listener\ScoreBoardListener.java
+C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\tutorial\commands\TellCommand.java
+C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\tutorial\listener\LobbyListener.java
+C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\tutorial\commands\BroadcastCommand.java
+C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\tutorial\commands\BuildCommand.java
+C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\tutorial\commands\VanishCommand.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\tutorial\TUTORIAL.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\tutorial\utils\ColorUtils.java
+C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\tutorial\listener\VanishListener.java
+C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\tutorial\commands\StaffChatCommand.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\tutorial\events\ChatEvent.java

@@ -1,5 +1,6 @@
 package com.pwdim.tutorial.commands;
 
+import com.pwdim.tutorial.TUTORIAL;
 import com.pwdim.tutorial.utils.ColorUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -10,22 +11,30 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.UUID;
 
 public class TellCommand implements CommandExecutor, Listener {
+    private final TUTORIAL plugin;
+
+    public TellCommand(TUTORIAL plugin) {
+        this.plugin = plugin;
+    }
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         String r = args[0];
         Player reciver = Bukkit.getPlayer(r);
         String senderDisplay;
         String[] newMsg = Arrays.copyOfRange(args, 1, args.length);
+        ArrayList<UUID> staffVanished = plugin.getVanishedPlayers();
 
         String mensagem = String.join(" ", newMsg);
         if(args.length < 1) {
             sender.sendMessage(ColorUtils.color("&cERROR: /tell <nick> <mensagem>"));
             return true;
         }
-        if (reciver == null) {
+        if (reciver == null||(!sender.hasPermission("staff.vanish") && staffVanished.contains(reciver.getUniqueId()))) {
             sender.sendMessage(ColorUtils.color("&cInsira um nick válido"));
             return true;
         }

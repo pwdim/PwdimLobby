@@ -1,5 +1,11 @@
-com\pwdim\tutorial\events\ChatEvent.class
+com\pwdim\tutorial\listener\VanishListener.class
 com\pwdim\tutorial\TUTORIAL.class
 com\pwdim\tutorial\utils\ColorUtils.class
-com\pwdim\tutorial\commands\TestCommand.class
-com\pwdim\tutorial\events\LobbyListener.class
+com\pwdim\tutorial\listener\LobbyListener.class
+com\pwdim\tutorial\commands\BroadcastCommand.class
+com\pwdim\tutorial\events\ChatEvent.class
+com\pwdim\tutorial\commands\BuildCommand.class
+com\pwdim\tutorial\commands\TellCommand.class
+com\pwdim\tutorial\commands\StaffChatCommand.class
+com\pwdim\tutorial\commands\VanishCommand.class
+com\pwdim\tutorial\listener\ScoreBoardListener.class
