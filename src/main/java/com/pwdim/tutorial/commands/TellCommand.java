@@ -27,7 +27,7 @@ public class TellCommand implements CommandExecutor, Listener {
         Player reciver = Bukkit.getPlayer(r);
         String senderDisplay;
         String[] newMsg = Arrays.copyOfRange(args, 1, args.length);
-        ArrayList<UUID> staffVanished = plugin.getVanishedPlayers();
+        ArrayList<Player> staffVanished = plugin.getVanishedPlayers();
 
         String mensagem = String.join(" ", newMsg);
         if(args.length < 1) {

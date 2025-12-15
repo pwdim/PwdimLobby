@@ -7,7 +7,7 @@ commands:
   broadcast:
     description: Envia um alerta para todos os jogadores.
     usage: /<command> <mensagem>
-    aliases: [ aviso, bd, alerta, anuncio]
+    aliases: [ aviso, bd, alerta, anuncio, bc]
     permission: lobby.broadcast
   tell:
     description: Envia um alerta para todos os jogadores.
@@ -24,9 +24,32 @@ commands:
     permission: staff.vanish
   build:
     usage: /<command>
-    aliases: [ builder, bd, construir ]
+    aliases: [ builder, b, construir ]
     permission: lobby.build
+  fly:
+    description: Ative o modo de vôo
+    usage: /<command> <velocidade>
+    aliases: [ voar, fly]
+    permission: lobby.fly
 permissions:
   lobby.vip:
     description: Permissoes vip do lobby
+    default: op
+  staff.vanish:
+    description: permissao de entrar no vanish
+    default: op
+  lobby.build:
+    description: comando de /build
+    default: op
+  staff.chat:
+    description: permissao para falar no /staffchat
+    default: op
+  staff.log:
+    description: ver as logs dos staffs
+    default: op
+  lobby.broadcast:
+    description: anunciar um broadcast para todo o servidor
+    default: op
+  lobby.fly:
+    description: permissao para voar no lobby
     default: op

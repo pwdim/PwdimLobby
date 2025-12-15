@@ -65,15 +65,15 @@ public class ChatEvent implements Listener {
         if (p.isOp()||p.hasPermission("tag.admin")) {
             p.setDisplayName(ColorUtils.color("&4&lADMIN &4&o") + p.getName());
             p.setPlayerListName(ColorUtils.color("&4&lADMIN &4&o") + p.getName());
-            p.setCustomName(ColorUtils.color("&4&lADMIN &4&o") + p.getName());
+            p.setCustomName(ColorUtils.color("&4&o") + p.getName());
         } else if (p.hasPermission("tag.modplus")) {
             p.setDisplayName(ColorUtils.color("&5&lMOD+ &5&o") + p.getName());
             p.setPlayerListName(ColorUtils.color("&5&lMOD+ &5&o") + p.getName());
-            p.setCustomName(ColorUtils.color("&5&lMOD+ &5&o") + p.getName());
+            p.setCustomName(ColorUtils.color("&5&o") + p.getName());
         } else if (p.hasPermission("tag.mod")) {
             p.setDisplayName(ColorUtils.color("&5&lMOD &5&o") + p.getName());
             p.setPlayerListName(ColorUtils.color("&5&lMOD &5&o") + p.getName());
-            p.setCustomName(ColorUtils.color("&5&lMOD &5&o") + p.getName());
+            p.setCustomName(ColorUtils.color("&5&o") + p.getName());
         } else {
             p.setDisplayName(ColorUtils.color("&7") + p.getName());
             p.setPlayerListName(ColorUtils.color("&7") + p.getName());
