@@ -2,6 +2,7 @@ package com.pwdim.tutorial;
 
 import com.pwdim.tutorial.commands.*;
 import com.pwdim.tutorial.events.ChatEvent;
+import com.pwdim.tutorial.listener.JoinMessageListener;
 import com.pwdim.tutorial.listener.LobbyListener;
 import com.pwdim.tutorial.listener.ScoreBoardListener;
 import com.pwdim.tutorial.utils.ColorUtils;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 
 public final class TUTORIAL extends JavaPlugin {
     private final ArrayList<Player> staffVanished = new ArrayList<>();
+    private final ArrayList<Player> staffVisualize = new ArrayList<>();
     private final ArrayList<UUID> buildMode = new ArrayList<>();
     private final Collection<? extends Player> onlinePlayers = Bukkit.getOnlinePlayers();
     int playerCount = onlinePlayers.size();
@@ -52,7 +54,8 @@ public final class TUTORIAL extends JavaPlugin {
             public void run() {
                 titleIndex = (titleIndex + 1) % TITLES.length;
                 String newTitle = TITLES[titleIndex];
-                String onlineLine = ColorUtils.color("&fOnline: &b&o" + Bukkit.getOnlinePlayers().size());
+                int players = Bukkit.getOnlinePlayers().size() - getVanishedPlayers().size();
+                String onlineLine = ColorUtils.color("&fOnline: &b&o" + players);
 
 
                 for (FastBoard board : boards.values()) {
@@ -75,16 +78,31 @@ public final class TUTORIAL extends JavaPlugin {
 
 
         getServer().getPluginManager().registerEvents(new LobbyListener(this), this);
+        Bukkit.getLogger().info(ColorUtils.color("LobbyListerner registrado") );
         getServer().getPluginManager().registerEvents(new ChatEvent(), this);
+        Bukkit.getLogger().info(ColorUtils.color("ChatEvent registrado") );
         getServer().getPluginManager().registerEvents(new ScoreBoardListener(this), this);
+        Bukkit.getLogger().info(ColorUtils.color("ScoreBoardListerner registrado") );
+        getServer().getPluginManager().registerEvents(new JoinMessageListener(this), this);
+        Bukkit.getLogger().info(ColorUtils.color("JoinMessageListerner registrado") );
+        //getServer().getPluginManager().registerEvents(new VanishListener(this), this);
+        Bukkit.getLogger().info(ColorUtils.color("VanishListener registrado") );
 
 
         getCommand("broadcast").setExecutor(new BroadcastCommand());
+        Bukkit.getLogger().info(ColorUtils.color("Comando /broadcast iniciado") );
         getCommand("tell").setExecutor(new TellCommand(this));
+        Bukkit.getLogger().info(ColorUtils.color("Comando /tell iniciado") );
         getCommand("staffchat").setExecutor(new StaffChatCommand());
+        Bukkit.getLogger().info(ColorUtils.color("Comando /staffchat iniciado") );
         getCommand("vanish").setExecutor(new VanishCommand(this));
+        Bukkit.getLogger().info(ColorUtils.color("Comando /vanish iniciado") );
         getCommand("build").setExecutor(new BuildCommand(this));
+        Bukkit.getLogger().info(ColorUtils.color("Comando /build iniciado") );
         getCommand("fly").setExecutor(new FlyCommand());
+        Bukkit.getLogger().info(ColorUtils.color("Comando /fly iniciado") );
+        getCommand("gm").setExecutor(new GameModeCommand());
+        Bukkit.getLogger().info(ColorUtils.color("Comando /gm iniciado") );
 
         updateScore();
 
@@ -94,6 +112,7 @@ public final class TUTORIAL extends JavaPlugin {
     public ArrayList<Player> getVanishedPlayers() {
         return staffVanished;
     }
+    public ArrayList<Player> getStaffVisualize() {return staffVisualize;}
 
     public ArrayList<UUID> getBuilders() {
         return buildMode;
@@ -101,6 +120,7 @@ public final class TUTORIAL extends JavaPlugin {
     public int getOnlinePlayers() {
         return playerCount;
     }
+
 
 
 
@@ -113,5 +133,21 @@ public final class TUTORIAL extends JavaPlugin {
         }
         boards.values().forEach(FastBoardBase::delete);
         boards.clear();
+    }
+
+    public void updateOnline() {
+        updateTaskID = Bukkit.getScheduler().runTaskTimer(this, new Runnable() {
+
+                    @Override
+                    public void run() {
+                        String onlineLine = ColorUtils.color("&fOnline: &b&o" + Bukkit.getOnlinePlayers().size());
+
+
+                        for (FastBoard board : boards.values()) {
+                            board.updateLine(3, onlineLine);
+                        }
+                    }
+                },
+                0L, 5L).getTaskId();
     }
 }

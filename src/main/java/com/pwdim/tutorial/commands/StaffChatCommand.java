@@ -17,31 +17,31 @@ public class StaffChatCommand implements CommandExecutor {
         String usage = ColorUtils.color("&c/staffchat <mensagem>");
         String msg = String.join(" ", args);
 
-        Player p = (Player) sender;
-
-        if(!p.hasPermission("staff.chat")) {
-            p.sendMessage(semPermissao);
-            return true;
-        }
-
-        String senderNick = p.getDisplayName();
-        for (Player staff : Bukkit.getOnlinePlayers()) {
-            if (staff.hasPermission("staff.chat")) {
-                staff.sendMessage(ColorUtils.color(prefix + senderNick +"&r: " +msg));
-                return true;
-            }
-            if (!(sender instanceof Player)) {
-                staff.sendMessage(ColorUtils.color(prefix + "&4&lCONSOLE &r:" + msg));
-                return true;
+        if (sender instanceof Player) {
+            Player p = (Player) sender;
+            String senderNick = p.getDisplayName();
+            if(!p.hasPermission("staff.chat")) {
+                p.sendMessage(semPermissao);
             }
 
-        }
+            for (Player staff : Bukkit.getOnlinePlayers()) {
+                if (staff.hasPermission("staff.chat")) {
+                    staff.sendMessage(ColorUtils.color(prefix + senderNick + "&r: " + msg));
+                    Bukkit.getConsoleSender().sendMessage(ColorUtils.color(prefix + senderNick + "&r: " + msg));
+                }
+            }
 
-        if (args.length == 0) {
-            p.sendMessage(usage);
-            return true;
+            if (args.length == 0) {
+                p.sendMessage(usage);
+            }
+        } else {
+            Bukkit.getConsoleSender().sendMessage(ColorUtils.color(prefix + "&4&l&oCONSOLE" +"&r: " +msg));
+            for (Player staff : Bukkit.getOnlinePlayers()) {
+                if (staff.hasPermission("staff.chat")) {
+                    staff.sendMessage(ColorUtils.color(prefix + "&4&l&oCONSOLE" +"&r: " +msg));
+                }
+            }
         }
         return true;
     }
-
 }

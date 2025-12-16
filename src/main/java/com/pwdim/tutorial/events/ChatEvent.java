@@ -15,6 +15,25 @@ public class ChatEvent implements Listener {
     public static void asyncChatEvent(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
 
+
+        if (p.isOp()||p.hasPermission("tag.admin")) {
+            p.setDisplayName(ColorUtils.color("&4&lADMIN &4&o") + p.getName());
+            p.setPlayerListName(ColorUtils.color("&4&lADMIN &4&o") + p.getName());
+            p.setCustomName(ColorUtils.color("&4&o") + p.getName());
+        } else if (p.hasPermission("tag.modplus")) {
+            p.setDisplayName(ColorUtils.color("&5&lMOD+ &5&o") + p.getName());
+            p.setPlayerListName(ColorUtils.color("&5&lMOD+ &5&o") + p.getName());
+            p.setCustomName(ColorUtils.color("&5&o") + p.getName());
+        } else if (p.hasPermission("tag.mod")) {
+            p.setDisplayName(ColorUtils.color("&5&lMOD &5&o") + p.getName());
+            p.setPlayerListName(ColorUtils.color("&5&lMOD &5&o") + p.getName());
+            p.setCustomName(ColorUtils.color("&5&o") + p.getName());
+        } else {
+            p.setDisplayName(ColorUtils.color("&7") + p.getName());
+            p.setPlayerListName(ColorUtils.color("&7") + p.getName());
+            p.setCustomName(ColorUtils.color("&7") + p.getName());
+        }
+
         e.setFormat(p.getDisplayName() + ColorUtils.color(": &r" + e.getMessage()));
     }
 
@@ -80,8 +99,9 @@ public class ChatEvent implements Listener {
             p.setCustomName(ColorUtils.color("&7") + p.getName());
         }
     }
+
     @EventHandler
-    public static void pMove(PlayerMoveEvent e) {
+    public static void pMove(PlayerCommandPreprocessEvent e) {
         Player p = e.getPlayer();
 
         if (p.isOp()||p.hasPermission("tag.admin")) {

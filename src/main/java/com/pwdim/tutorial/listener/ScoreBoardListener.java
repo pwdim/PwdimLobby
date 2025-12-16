@@ -7,10 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.*;
 import org.bukkit.plugin.Plugin;
 
 import java.util.Collection;
@@ -34,30 +31,11 @@ public class ScoreBoardListener implements Listener {
         FastBoard board = new FastBoard(p);
         String title = ColorUtils.color("&B&LPWDIM");
         String footer = ColorUtils.color("&b&oplay.pwdim.com");
-        String online = ColorUtils.color("&fOnline: &b&o"+ plugin.getOnlinePlayers());
-
+        String online = ColorUtils.color("&fOnline: &b&o" + Bukkit.getOnlinePlayers().size());
         plugin.getBoards().put(p.getUniqueId()  , board);
 
-        board.updateTitle(title);
-        board.updateLine(0, ColorUtils.color(" "));
-        board.updateLine(1, ColorUtils.color("&fOlá, %s&f.", p.getCustomName()));
-        board.updateLine(2, ColorUtils.color(" "));
-        board.updateLine(3, ColorUtils.color(online));
-        board.updateLine(4, ColorUtils.color(" "));
-        board.updateLine(5, footer);
-    }
-    @EventHandler
-    public void setScoreBoard(PlayerMoveEvent e) {
-        Player p = e.getPlayer();
-        FastBoard board = new FastBoard(p);
-        String title = ColorUtils.color("&B&LPWDIM");
-        String footer = ColorUtils.color("&b&oplay.pwdim.com");
-        String online = ColorUtils.color("&fOnline: &b&o"+ plugin.getOnlinePlayers());
-
-        plugin.getBoards().put(p.getUniqueId()  , board);
 
         board.updateTitle(title);
-        board.updateLine(0, ColorUtils.color(" "));
         board.updateLine(1, ColorUtils.color("&fOlá, %s&f.", p.getCustomName()));
         board.updateLine(2, ColorUtils.color(" "));
         board.updateLine(3, ColorUtils.color(online));
@@ -73,7 +51,6 @@ public class ScoreBoardListener implements Listener {
         if (board != null) {
             board.delete();
         }
+        plugin.updateOnline();
     }
-
-
 }

@@ -1,9 +1,11 @@
+com\pwdim\tutorial\listener\JoinMessageListener.class
 com\pwdim\tutorial\TUTORIAL.class
 com\pwdim\tutorial\commands\FlyCommand.class
 com\pwdim\tutorial\utils\ColorUtils.class
 com\pwdim\tutorial\listener\LobbyListener.class
 com\pwdim\tutorial\commands\BroadcastCommand.class
 com\pwdim\tutorial\commands\GameModeCommand.class
+com\pwdim\tutorial\TUTORIAL$2.class
 com\pwdim\tutorial\events\ChatEvent.class
 com\pwdim\tutorial\commands\BuildCommand.class
 com\pwdim\tutorial\TUTORIAL$1.class

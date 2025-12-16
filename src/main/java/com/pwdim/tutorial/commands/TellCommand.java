@@ -30,11 +30,20 @@ public class TellCommand implements CommandExecutor, Listener {
         ArrayList<Player> staffVanished = plugin.getVanishedPlayers();
 
         String mensagem = String.join(" ", newMsg);
+
+
+        if(!(sender instanceof Player)) {
+            sender.sendMessage(ColorUtils.color("&8["+"&4&l&oCONSOLE" + "&8] &e➢➢ &8["+ reciver.getCustomName()+"&8] &e" + mensagem));
+            reciver.sendMessage(ColorUtils.color("&8["+"&4&l&oCONSOLE" + "&8] &e➢➢ &8["+ reciver.getCustomName()+"&8] &e" + mensagem));
+
+
+            return true;
+        }
         if(args.length < 1) {
             sender.sendMessage(ColorUtils.color("&cERROR: /tell <nick> <mensagem>"));
             return true;
         }
-        if (reciver == null||(!sender.hasPermission("staff.vanish") && staffVanished.contains(reciver.getUniqueId()))) {
+        if (reciver == null||(!sender.hasPermission("staff.vanish") && staffVanished.contains(reciver))) {
             sender.sendMessage(ColorUtils.color("&cInsira um nick válido"));
             return true;
         }
@@ -48,6 +57,7 @@ public class TellCommand implements CommandExecutor, Listener {
             senderDisplay = p.getCustomName();
             sender.sendMessage(ColorUtils.color("&8["+senderDisplay + "&8] &e➢➢ &8["+ reciver.getCustomName()+"&8] &e" + mensagem));
             reciver.sendMessage(ColorUtils.color("&8["+senderDisplay + "&8] &e➢➢ &8["+ reciver.getCustomName()+"&8] &e" + mensagem));
+
         }
 
         return true;
