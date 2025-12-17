@@ -50,21 +50,21 @@ tags:
     permission: "tag.yt+"
     prefix: "&3&lYT+ &3"
     name-color: "&3&o"
-    type: "&3Partner+ "
+    type: "&3YT+ "
 
   partnerplus:
     priority: 41
     permission: "tag.yt+"
-    prefix: "&3&PARTNER+ &3"
+    prefix: "&3&lPARTNER+ &3"
     name-color: "&3&o"
     type: "&3Partner+ "
 
   creatorplus:
     priority: 42
     permission: "tag.yt+"
-    prefix: "&3&CREATOR+ &3"
+    prefix: "&3&lCREATOR+ &3"
     name-color: "&3&o"
-    type: "&3Partner+ "
+    type: "&3Creator+ "
 
 
   yt:
@@ -72,7 +72,7 @@ tags:
     permission: "tag.yt"
     prefix: "&b&lYT &b"
     name-color: "&b"
-    type: "&bPartner "
+    type: "&bYT "
 
   partner:
     priority: 51
@@ -86,11 +86,11 @@ tags:
     permission: "tag.yt"
     prefix: "&b&lCREATOR &b"
     name-color: "&b"
-    type: "&bPartner "
+    type: "&bCreator "
 
   membro:
     priority: 1000
-    permission: ""
+    permission: "tag.membro"
     prefix: "&7"
     name-color: "&7"
     type: "&7Membro "

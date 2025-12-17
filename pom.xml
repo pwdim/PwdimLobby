@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.pwdim</groupId>
-    <artifactId>TUTORIAL</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>Lobby</artifactId>
+    <version>1.0.1-ALPHA</version>
     <packaging>jar</packaging>
 
     <name>TUTORIAL</name>
@@ -81,12 +81,41 @@
                 <id>placeholderapi</id>
                 <url>https://repo.extendedclip.com/releases/</url>
             </repository>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
+            <groupId>net.dv8tion</groupId>
+            <artifactId>JDA</artifactId>
+            <version>6.2.0</version> <!-- replace $version with the latest version -->
+            <!-- Optionally disable audio natives to reduce jar size by excluding `opus-java` and `tink` -->
+            <exclusions>
+                <!-- required for encoding audio into opus, not needed if audio is already provided in opus encoding
+                <exclusion>
+                    <groupId>club.minnced</groupId>
+                    <artifactId>opus-java</artifactId>
+                </exclusion> -->
+                <!-- required for encrypting and decrypting audio
+                <exclusion>
+                    <groupId>com.google.crypto.tink</groupId>
+                    <artifactId>tink</artifactId>
+                </exclusion> -->
+            </exclusions>
+        </dependency>
+        <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--Bukkit API-->
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>

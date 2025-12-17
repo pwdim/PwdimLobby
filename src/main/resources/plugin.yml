@@ -1,8 +1,10 @@
-name: TUTORIAL
+name: Lobby
 version: '${project.version}'
-main: com.pwdim.tutorial.TUTORIAL
+main: com.pwdim.lobby.LOBBY
 api-version: '1.8'
 prefix: Lobby
+author: pwdim
+website: pwdim.com
 commands:
   broadcast:
     description: Envia um alerta para todos os jogadores.
@@ -10,7 +12,7 @@ commands:
     aliases: [ aviso, bd, alerta, anuncio, bc]
     permission: lobby.broadcast
   tell:
-    description: Envia um alerta para todos os jogadores.
+    description: Envia uma mensagem privada para um jogador.
     usage: /<command> <jogador> <mensagem>
     aliases: [ whisper, w, ]
     permission: ""
@@ -36,6 +38,11 @@ commands:
     usage: /<command> <modo>
     aliases: [ gm, g, gmode, gamem]
     permission: staff.gamemode
+  tag:
+    description: Mude sua tag
+    usage: /<command> <tag>
+    aliases: [ prefix, tg, tag, style, teg]
+    permission: ""
 permissions:
   lobby.vip:
     description: Permissoes vip do lobby
