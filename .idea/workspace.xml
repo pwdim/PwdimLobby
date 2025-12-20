@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b7c29d8-ec20-470d-98dd-b9df33242ba0" name="Changes" comment="" />
+    <list default="true" id="9b7c29d8-ec20-470d-98dd-b9df33242ba0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,12 +28,12 @@
     &quot;assignee&quot;: &quot;pwdim&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/pwdim/TUTORIALplugin.git&quot;,
-    &quot;accountId&quot;: &quot;1809ee22-c230-4cd9-9dee-5ce57454ccbe&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/pwdim/PwdimLobby",
+    "accountId": "1809ee22-c230-4cd9-9dee-5ce57454ccbe"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -63,6 +65,14 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pedro\Downloads\TUTORIAL" />
+      <recent name="C:\Users\pedro\Downloads\TUTORIAL\src" />
+      <recent name="C:\Users\pedro\Downloads\TUTORIAL\.idea" />
+      <recent name="C:\Users\pedro\Downloads\TUTORIAL\src\main\resources" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="listener" />
