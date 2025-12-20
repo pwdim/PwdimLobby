@@ -6,4 +6,4 @@
 **/.env
 ./resources/.env
 /.env
-.env*
+src/main/resources/.env
