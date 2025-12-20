@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b7c29d8-ec20-470d-98dd-b9df33242ba0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9b7c29d8-ec20-470d-98dd-b9df33242ba0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,9 +65,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pedro\Downloads\TUTORIAL\.idea" />
       <recent name="C:\Users\pedro\Downloads\TUTORIAL" />
       <recent name="C:\Users\pedro\Downloads\TUTORIAL\src" />
-      <recent name="C:\Users\pedro\Downloads\TUTORIAL\.idea" />
       <recent name="C:\Users\pedro\Downloads\TUTORIAL\src\main\resources" />
     </key>
   </component>
