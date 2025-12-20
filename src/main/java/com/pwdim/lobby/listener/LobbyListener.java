@@ -1,6 +1,9 @@
 package com.pwdim.lobby.listener;
 
 import com.pwdim.lobby.LOBBY;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -10,10 +13,13 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.server.ServerListPingEvent;
 
 
 import java.util.ArrayList;
 import java.util.UUID;
+
+import static com.pwdim.lobby.LOBBY.reciverList;
 
 public class LobbyListener implements Listener {
 
@@ -60,18 +66,6 @@ public class LobbyListener implements Listener {
         e.setQuitMessage(null);
         plugin.loadPlayersData();
         plugin.savePlayersData();
-
-    }
-    @EventHandler
-    public void onPlayerJoined(PlayerJoinEvent e) {
-        Player p = e.getPlayer();
-        for (Player vanishedPlayer : plugin.getVanishedPlayers()) {
-            if (!p.hasPermission("staff.vanish")) {
-                p.hidePlayer(vanishedPlayer);
-            }
-        }
-
-
     }
 
     @EventHandler
@@ -79,6 +73,33 @@ public class LobbyListener implements Listener {
         plugin.loadPlayersData();
         plugin.savePlayersData();
 
+    }
+
+    @EventHandler
+    public void onPing(ServerListPingEvent e) {
+        FileConfiguration config = Bukkit.getPluginManager().getPlugin("Lobby").getConfig();
+
+
+        String line1 = config.getString("server.motd.line1", "Servidor Minecraft");
+        String line2 = config.getString("server.motd.line2", "Seja bem-vindo!");
+
+        e.setMotd(centralize(line1) + "\n" + centralize(line2));
+    }
+
+    private String centralize(String text) {
+        if (text == null || text.isEmpty()) return "";
+
+        int totalLength = 52;
+        String stripped = ChatColor.stripColor(text);
+        int padding = (totalLength - stripped.length()) / 2;
+
+        if (padding <= 0) return text;
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < padding; i++) {
+            sb.append(" ");
+        }
+        return sb.append(text).toString();
     }
 
 

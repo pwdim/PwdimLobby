@@ -20,7 +20,7 @@ public class GameModeCommand implements CommandExecutor {
         } else {
             if (sender.hasPermission("staff.gamemode")||(sender.isOp())) {
 
-                if (parseArgs == 0|| args[0].contains("survival")||args[0].contains("s")) {
+                if (parseArgs == 0) {
                     ((Player) sender).setGameMode(GameMode.SURVIVAL);
                     Bukkit.getConsoleSender().sendMessage(ColorUtils.color("&7&o["+ ((Player) sender).getCustomName() + "&7&o entrou no survival]"));
                     for (Player staff : Bukkit.getOnlinePlayers()) {
@@ -32,7 +32,7 @@ public class GameModeCommand implements CommandExecutor {
                     }
                     return true;
 
-                } else if (parseArgs == 1|| args[0].contains("creative")||args[0].contains("c")) {
+                } else if (parseArgs == 1) {
                     ((Player) sender).setGameMode(GameMode.CREATIVE);
                     Bukkit.getConsoleSender().sendMessage(ColorUtils.color("&7&o["+ ((Player) sender).getCustomName() + "&7&o entrou no criativo]"));
                     for (Player staff : Bukkit.getOnlinePlayers()) {
@@ -43,7 +43,7 @@ public class GameModeCommand implements CommandExecutor {
                         return true;
                     }
                     return true;
-                } else if (parseArgs == 3|| args[0].contains("spectator")||args[0].contains("spec")) {
+                } else if (parseArgs == 3) {
                     ((Player) sender).setGameMode(GameMode.SPECTATOR);
                     Bukkit.getConsoleSender().sendMessage(ColorUtils.color("&7&o["+ ((Player) sender).getCustomName() + "&7&o entrou no spectator]"));
                     for (Player staff : Bukkit.getOnlinePlayers()) {
@@ -54,7 +54,7 @@ public class GameModeCommand implements CommandExecutor {
                         return true;
                     }
                     return true;
-                } else if (parseArgs == 2|| args[0].contains("adventure")||args[0].contains("a")) {
+                } else if (parseArgs == 2) {
                     ((Player) sender).setGameMode(GameMode.ADVENTURE);
                     Bukkit.getConsoleSender().sendMessage(ColorUtils.color("&7&o["+ ((Player) sender).getCustomName() + "&7&o entrou no adventure]"));
                     for (Player staff : Bukkit.getOnlinePlayers()) {
@@ -66,16 +66,7 @@ public class GameModeCommand implements CommandExecutor {
                     }
                     return true;
                 } else {
-                    ((Player) sender).setGameMode(GameMode.CREATIVE);
-                    Bukkit.getConsoleSender().sendMessage(ColorUtils.color("&7&o["+ ((Player) sender).getCustomName() + "&7&o entrou no criativo]"));
-                    for (Player staff : Bukkit.getOnlinePlayers()) {
-                        if (staff.hasPermission("staff.log")) {
-                            staff.sendMessage(ColorUtils.color("&7&o["+ ((Player) sender).getCustomName() + "&7&o entrou no criativo]"));
-                            return true;
-                        }
-                        return true;
-                    }
-                    return true;
+                    sender.sendMessage(ColorUtils.color("&cUse: /gm <modo>"));
                 }
 
 
@@ -86,5 +77,6 @@ public class GameModeCommand implements CommandExecutor {
 
 
         }
+        return true;
     }
 }

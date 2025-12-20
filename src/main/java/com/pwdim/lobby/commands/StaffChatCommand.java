@@ -1,5 +1,6 @@
 package com.pwdim.lobby.commands;
 
+import com.pwdim.lobby.LOBBY;
 import com.pwdim.lobby.utils.ColorUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -8,7 +9,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 
-public class StaffChatCommand implements CommandExecutor {
+public class StaffChatCommand implements CommandExecutor{
+
+    private final LOBBY plugin;
+
+    public StaffChatCommand(LOBBY plugin) {
+        this.plugin = plugin;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmg, String label, String[] args) {
@@ -43,5 +50,6 @@ public class StaffChatCommand implements CommandExecutor {
             }
         }
         return true;
+
     }
 }

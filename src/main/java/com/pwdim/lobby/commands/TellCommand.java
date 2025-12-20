@@ -13,6 +13,10 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+import static com.pwdim.lobby.LOBBY.reciverList;
 
 public class TellCommand implements CommandExecutor, Listener {
     private final LOBBY plugin;
@@ -43,7 +47,7 @@ public class TellCommand implements CommandExecutor, Listener {
             return true;
         }
         if (reciver == null||(!sender.hasPermission("staff.vanish") && staffVanished.contains(reciver))) {
-            sender.sendMessage(ColorUtils.color("&cInsira um nick válido"));
+            sender.sendMessage(ColorUtils.color("&cJogador não encontrado"));
             return true;
         }
 
@@ -56,6 +60,8 @@ public class TellCommand implements CommandExecutor, Listener {
             senderDisplay = p.getCustomName();
             sender.sendMessage(ColorUtils.color("&8["+senderDisplay + "&8] &e➢➢ &8["+ reciver.getCustomName()+"&8] &e" + mensagem));
             reciver.sendMessage(ColorUtils.color("&8["+senderDisplay + "&8] &e➢➢ &8["+ reciver.getCustomName()+"&8] &e" + mensagem));
+            reciverList.put(p, reciver);
+            reciverList.put(reciver, p);
 
         }
 
@@ -68,5 +74,8 @@ public class TellCommand implements CommandExecutor, Listener {
         if (msg.toLowerCase().startsWith("/tell")) {
             e.setCancelled(true);
         }
+
+
+
     }
 }

@@ -5,11 +5,6 @@
   <artifactId>Lobby</artifactId>
   <name>TUTORIAL</name>
   <version>1.0.1-ALPHA</version>
-  <scm>
-    <connection>scm:git:https://github.com/pwdim/TUTORIALplugin/</connection>
-    <developerConnection>scm:git:https://github.com/pwdim/TUTORIALplugin.git</developerConnection>
-    <url>https://github.com/pwdim/TUTORIALplugin/</url>
-  </scm>
   <build>
     <resources>
       <resource>
@@ -22,8 +17,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
         <configuration>
-          <source>${java.version}</source>
-          <target>${java.version}</target>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
       <plugin>
@@ -35,16 +30,30 @@
             <goals>
               <goal>shade</goal>
             </goals>
+            <configuration>
+              <relocations>
+                <relocation>
+                  <pattern>net.dv8tion</pattern>
+                  <shadedPattern>com.pwdim.lobby.libs.jda</shadedPattern>
+                </relocation>
+                <relocation>
+                  <pattern>fr.mrmicky.fastboard</pattern>
+                  <shadedPattern>com.pwdim.lobby.libs.fastboard</shadedPattern>
+                </relocation>
+              </relocations>
+              <filters>
+                <filter>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>META-INF/*.SF</exclude>
+                    <exclude>META-INF/*.DSA</exclude>
+                    <exclude>META-INF/*.RSA</exclude>
+                  </excludes>
+                </filter>
+              </filters>
+            </configuration>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>3.0.1</version>
-        <configuration>
-          <scmCommentPrefix>[RELEASE]</scmCommentPrefix>
-          <tagNameFormat>v@{project.version}</tagNameFormat>
-        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -54,28 +63,22 @@
       <url>https://repo.papermc.io/repository/maven-public/</url>
     </repository>
     <repository>
-      <id>sonatype</id>
-      <url>https://oss.sonatype.org/content/groups/public/</url>
+      <id>spigot-repo</id>
+      <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
     </repository>
     <repository>
       <id>placeholderapi</id>
       <url>https://repo.extendedclip.com/releases/</url>
     </repository>
     <repository>
-      <id>spigot-repo</id>
-      <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+      <id>dv8tion</id>
+      <url>https://m2.dv8tion.net/releases</url>
     </repository>
   </repositories>
   <dependencies>
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>
-      <version>1.8.8-R0.1-SNAPSHOT</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.bukkit</groupId>
-      <artifactId>bukkit</artifactId>
       <version>1.8.8-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>

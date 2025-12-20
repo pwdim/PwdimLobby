@@ -5,66 +5,108 @@ api-version: '1.8'
 prefix: Lobby
 author: pwdim
 website: pwdim.com
+
 commands:
   broadcast:
     description: Envia um alerta para todos os jogadores.
     usage: /<command> <mensagem>
-    aliases: [ aviso, bd, alerta, anuncio, bc]
+    aliases: [aviso, bd, alerta, anuncio, bc]
     permission: lobby.broadcast
+  build:
+    description: Ativa ou desativa o seu modo de construção.
+    usage: /<command>
+    aliases: [builder, b, construir]
+    permission: lobby.build
+  fly:
+    description: Ativa ou desativa o modo de voo.
+    usage: /<command> [velocidade]
+    aliases: [voar]
+    permission: lobby.fly
+  gamemode:
+    description: Altera o seu modo de jogo.
+    usage: /<command> <modo>
+    aliases: [gm, g, gmode, gamem]
+    permission: staff.gamemode
+  lreload:
+    description: Recarregar o plugin do lobby
+    usage: /<command> reload
+    aliases: [lobby-reload, lobbyreload, lr]
+    permission: lobby.reload
+  motd:
+    description: Alterar o motd
+    usage: /<command> <line>
+    aliases: [ setmotd, motdset, setmt]
+    permission: lobby.motd
+  r:
+    description: Envie uma mensagem privada para um jogador.
+    usage: /<command>
+    aliases: [w, whisper, reply, rep]
+    permission: ""
+  setspawn:
+    description: Define o ponto de spawn do mundo atual.
+    usage: /<command>
+    aliases: [setworldspawn, setspawnpoint, spawnpoint]
+    permission: staff.setspawn
+  spawn:
+    description: Teleporta você para o spawn do mundo.
+    usage: /<command>
+    aliases: [hub, lobby, l, h, lb, back]
+    permission: ""
+  staffchat:
+    description: Canal de comunicação exclusivo para a equipe.
+    usage: /<command> <mensagem>
+    aliases: [sc, s, staffc]
+    permission: staff.chat
+  tag:
+    description: Altera a sua tag de exibição.
+    usage: /<command> <tag>
+    aliases: [prefix, tg, style, teg]
+    permission: ""
   tell:
     description: Envia uma mensagem privada para um jogador.
     usage: /<command> <jogador> <mensagem>
-    aliases: [ whisper, w, ]
+    aliases: [whisper, w]
     permission: ""
-  staffchat:
-    usage: /<command> <mensagem>
-    aliases: [ sc, s, staffc  ]
-    permission: staff.chat
   vanish:
+    description: Torna você invisível para outros jogadores.
     usage: /<command>
-    aliases: [ v, hide, staffmode]
+    aliases: [v, hide, staffmode]
     permission: staff.vanish
-  build:
-    usage: /<command>
-    aliases: [ builder, b, construir ]
-    permission: lobby.build
-  fly:
-    description: Ative o modo de vôo
-    usage: /<command> <velocidade>
-    aliases: [ voar, fly]
-    permission: lobby.fly
-  gamemode:
-    description: Mude o seu modo de jogo
-    usage: /<command> <modo>
-    aliases: [ gm, g, gmode, gamem]
-    permission: staff.gamemode
-  tag:
-    description: Mude sua tag
-    usage: /<command> <tag>
-    aliases: [ prefix, tg, tag, style, teg]
-    permission: ""
+
+
+
+
 permissions:
-  lobby.vip:
-    description: Permissoes vip do lobby
-    default: op
-  staff.vanish:
-    description: permissao de entrar no vanish
+  lobby.broadcast:
+    description: Permissão para anunciar um broadcast para todo o servidor.
     default: op
   lobby.build:
-    description: comando de /build
-    default: op
-  staff.chat:
-    description: permissao para falar no /staffchat
-    default: op
-  staff.log:
-    description: ver as logs dos staffs
-    default: op
-  lobby.broadcast:
-    description: anunciar um broadcast para todo o servidor
+    description: Permissão para utilizar o comando /build.
     default: op
   lobby.fly:
-    description: permissao para voar no lobby
+    description: Permissão para voar no lobby.
+    default: op
+  lobby.motd:
+    description: Permissao para mudar o motd.
+    default: op
+  lobby.reload:
+    description: Permissão para reiniciar o plugin
+    default: op
+  lobby.vip:
+    description: Permissões VIP do lobby.
+    default: op
+  staff.chat:
+    description: Permissão para ler e falar no /staffchat.
     default: op
   staff.gamemode:
-    description: mude seu modo de jogo
+    description: Permissão para mudar o modo de jogo.
+    default: op
+  staff.log:
+    description: Permissão para visualizar as logs da staff.
+    default: op
+  staff.setspawn:
+    description: Permissão para definir o spawn do mundo.
+    default: op
+  staff.vanish:
+    description: Permissão para entrar no modo invisível (vanish).
     default: op

@@ -42,7 +42,7 @@ public class BuildCommand implements CommandExecutor {
             builder.sendMessage(ColorUtils.color("&CBuild desativada!"));
             for (Player player : Bukkit.getOnlinePlayers()) {
                 if (player.hasPermission("staff.log") && !player.equals(builder)) {
-                    player.sendMessage("&7&o[" +((Player) sender).getCustomName() + "&7&odesativou o modo build]");
+                    player.sendMessage(ColorUtils.color("&7&o[" +((Player) sender).getCustomName() + "&7&o desativou o modo build]"));
                 }
             }
         } else if (builder.hasPermission("lobby.build") && !buildersList.contains(builder.getUniqueId())) {
@@ -50,7 +50,7 @@ public class BuildCommand implements CommandExecutor {
             builder.sendMessage(ColorUtils.color("&aBuild ativada!"));
             for (Player player : Bukkit.getOnlinePlayers()) {
                 if (player.hasPermission("staff.log") && !player.equals(builder)) {
-                    player.sendMessage("&7&o[" +((Player) sender).getCustomName() + "&7&oativou o modo build]");
+                    player.sendMessage(ColorUtils.color("&7&o[" +((Player) sender).getCustomName() + "&7&o ativou o modo build]"));
                 }
             }
         }

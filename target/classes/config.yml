@@ -1,96 +1,105 @@
-default-tag: "membro"
-
+# Define a tag default para quem não tem tag (É necessário que a tag esteja configurada no .tags:)
+default-tag: membro
+### Todas as tags do servidor
 tags:
-
+  ## Nome da tag no /tag <nome>
   pwdim:
-    priority: 1
-    permission: "tag.pwdim"
-    prefix: "&b&lADMIN &b"
-    name-color: "&b&o"
-    type: "&bAdmin "
-
+    ## Prioridade no tablist (Quantor menor o número mais alto fica a tag)
+    priority: 0
+    ## Permissão necessária para usar a tag
+    permission: tag.pwdim
+    ## Prefix no tag, ao entrar, etc
+    prefix: '&b&lADMIN &b'
+    ## Somente a cor da tag, sem o prefixo
+    name-color: '&b&o'
+    ## Como ela vai aparecer no /tag ou na scoreboard
+    type: '&bAdmin '
   admin:
     priority: 10
-    permission: "tag.admin"
-    prefix: "&4&lADMIN &4"
-    name-color: "&4&o"
-    type: "&4Admin "
-
-
+    permission: tag.admin
+    prefix: '&4&lADMIN &4'
+    name-color: '&4&o'
+    type: '&4Admin '
   modplus:
-    priority: 20
-    permission: "tag.mod+"
-    prefix: "&5&lMOD+ &5"
-    name-color: "&5&o"
-    type: "&5Mod+ "
-
+    priority: 15
+    permission: tag.mod+
+    prefix: '&5&lMOD+ &5'
+    name-color: '&5&o'
+    type: '&5Mod+ '
   mod:
-    priority: 25
-    permission: "tag.mod"
-    prefix: "&5&lMOD &5"
-    name-color: "&5&o"
-    type: "&5Mod "
-
+    priority: 20
+    permission: tag.mod
+    prefix: '&5&lMOD &5'
+    name-color: '&5&o'
+    type: '&5Mod '
   trial:
-    priority: 30
-    permission: "tag.trial"
-    prefix: "&5&lTRIAL &5"
-    name-color: "&5&o"
-    type: "&5Trial "
-
+    priority: 25
+    permission: tag.trial
+    prefix: '&5&lTRIAL &5'
+    name-color: '&5&o'
+    type: '&5Trial '
   helper:
-    priority: 35
-    permission: "tag.helper"
-    prefix: "&9&lHELPER &9"
-    name-color: "&9&o"
-    type: "&9Helper "
-
+    priority: 30
+    permission: tag.helper
+    prefix: '&9&lHELPER &9'
+    name-color: '&9&o'
+    type: '&9Helper '
   ytplus:
-    priority: 40
-    permission: "tag.yt+"
-    prefix: "&3&lYT+ &3"
-    name-color: "&3&o"
-    type: "&3YT+ "
-
+    priority: 35
+    permission: tag.yt+
+    prefix: '&3&lYT+ &3'
+    name-color: '&3&o'
+    type: '&3YT+ '
   partnerplus:
-    priority: 41
-    permission: "tag.yt+"
-    prefix: "&3&lPARTNER+ &3"
-    name-color: "&3&o"
-    type: "&3Partner+ "
-
+    priority: 40
+    permission: tag.yt+
+    prefix: '&3&lPARTNER+ &3'
+    name-color: '&3&o'
+    type: '&3Partner+ '
   creatorplus:
-    priority: 42
-    permission: "tag.yt+"
-    prefix: "&3&lCREATOR+ &3"
-    name-color: "&3&o"
-    type: "&3Creator+ "
-
-
+    priority: 45
+    permission: tag.yt+
+    prefix: '&3&lCREATOR+ &3'
+    name-color: '&3&o'
+    type: '&3Creator+ '
   yt:
     priority: 50
-    permission: "tag.yt"
-    prefix: "&b&lYT &b"
-    name-color: "&b"
-    type: "&bYT "
-
+    permission: tag.yt
+    prefix: '&b&lYT &b'
+    name-color: '&b'
+    type: '&bYT '
   partner:
-    priority: 51
-    permission: "tag.yt"
-    prefix: "&b&lPARTNER &b"
-    name-color: "&b"
-    type: "&bPartner "
-
+    priority: 55
+    permission: tag.partner
+    prefix: '&b&lPARTNER &b'
+    name-color: '&b'
+    type: '&bPartner '
   creator:
-    priority: 52
-    permission: "tag.yt"
-    prefix: "&b&lCREATOR &b"
-    name-color: "&b"
-    type: "&bCreator "
-
+    priority: 60
+    permission: tag.creator
+    prefix: '&b&lCREATOR &b'
+    name-color: '&b'
+    type: '&bCreator '
   membro:
-    priority: 1000
-    permission: "tag.membro"
-    prefix: "&7"
-    name-color: "&7"
-    type: "&7Membro "
+    priority: 65
+    permission: tag.membro
+    prefix: '&7'
+    name-color: '&7'
+    type: '&7Membro '
+## Configurações gerais do servidor
+server:
+  ## Define o MOTD na lista de servidores
+  motd:
+    ## /motd 1
+    line1: §1§m§l__--§9§l§m__--§b§m§l__--§b§l PWDIM §b§m§l--__§9§l§m--__§1§m§l--__§r
+    ## /motd 2
+    line2: §c§lALPHA §eem desenvolvimento!
+  ## Número máximo de jogadores do servidor
+  max: 1000
+  ## Mensagem enviada quando o jogador não tem permissão
+  no-perm-message: '&cVocê não possui permissão para executar esse comando!'
+  ## Mensagem enviada quando o comando não é encontrado
+  no-cmd-message: '&cComando não encontrado'
+  ## Você quer bloquear os comandos
+  all-cmd:
+bot-token: ''
