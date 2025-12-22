@@ -3,9 +3,11 @@ C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\commands\MotdCom
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\commands\StaffChatCommand.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\commands\VanishCommand.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\commands\ReloadCommand.java
+C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\commands\RCommand.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\commands\BuildCommand.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\listener\JumpPadListener.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\listener\LobbyListener.java
+C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\listener\NoPermListener.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\commands\BroadcastCommand.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\commands\TagCommand.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\commands\GameModeCommand.java
@@ -14,6 +16,7 @@ C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\commands\FlyComm
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\listener\JoinMessageListener.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\listener\ScoreBoardListener.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\LOBBY.java
+C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\itens\LobbyCustomItens.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\events\ChatEvent.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\commands\SetSpawnCommand.java
 C:\Users\pedro\Downloads\TUTORIAL\src\main\java\com\pwdim\lobby\utils\ColorUtils.java

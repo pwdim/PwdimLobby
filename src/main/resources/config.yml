@@ -91,15 +91,18 @@ server:
   ## Define o MOTD na lista de servidores
   motd:
     ## /motd 1
-    line1: §1§m§l__--§9§l§m__--§b§m§l__--§b§l PWDIM §b§m§l--__§9§l§m--__§1§m§l--__§r
+    line1: "Mude essa linha com /motd 1 <texto>"
     ## /motd 2
-    line2: §c§lALPHA §eem desenvolvimento!
+    line2: "Mude essa linha com /motd 2 <texto>"
   ## Número máximo de jogadores do servidor
   max: 1000
   ## Mensagem enviada quando o jogador não tem permissão
-  no-perm-message: '&cVocê não possui permissão para executar esse comando!'
+  no-perm-message: &cVocê não possui permissão para executar esse comando!
   ## Mensagem enviada quando o comando não é encontrado
-  no-cmd-message: '&cComando não encontrado'
-  ## Você quer bloquear os comandos
-  all-cmd:
+  no-cmd-message: &cComando não encontrado
+  ## Titulo ao entrar no servidor
+  title: "&b&lPWDIM"
+  ## Subtitulo ao entrar no servidor
+  subtitle: "&e&oSeja bem-vindo(a)!"
+
 bot-token: ''

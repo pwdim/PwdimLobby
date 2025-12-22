@@ -1,6 +1,7 @@
 com\pwdim\lobby\commands\ReloadCommand.class
 com\pwdim\lobby\LOBBY$1.class
 com\pwdim\lobby\events\ChatEvent.class
+com\pwdim\lobby\models\LobbyCustomItens.class
 com\pwdim\lobby\LOBBY.class
 com\pwdim\lobby\commands\RCommand.class
 com\pwdim\lobby\commands\StaffChatCommand.class
@@ -12,7 +13,6 @@ com\pwdim\lobby\commands\BroadcastCommand.class
 com\pwdim\lobby\utils\ColorUtils.class
 com\pwdim\lobby\commands\TagCommand.class
 com\pwdim\lobby\commands\FlyCommand.class
-com\pwdim\lobby\commands\PreferencesCommand.class
 com\pwdim\lobby\commands\SpawnCommand.class
 com\pwdim\lobby\LOBBY$2.class
 com\pwdim\lobby\commands\GameModeCommand.class

@@ -44,7 +44,7 @@ commands:
     permission: ""
   setspawn:
     description: Define o ponto de spawn do mundo atual.
-    usage: /<command>
+    usage: /<command> <vip/normal>
     aliases: [setworldspawn, setspawnpoint, spawnpoint]
     permission: staff.setspawn
   spawn:

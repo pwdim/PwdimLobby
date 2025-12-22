@@ -1,8 +1,10 @@
 package com.pwdim.lobby;
 
+
 import com.pwdim.lobby.commands.*;
 import com.pwdim.lobby.events.ChatEvent;
 import com.pwdim.lobby.listener.*;
+import com.pwdim.lobby.models.LobbyCustomItens;
 import com.pwdim.lobby.utils.ColorUtils;
 import fr.mrmicky.fastboard.FastBoard;
 import fr.mrmicky.fastboard.FastBoardBase;
@@ -104,6 +106,7 @@ public final class LOBBY extends JavaPlugin {
     private File spawnsFile;
     private YamlConfiguration spawnsConfig;
     public static HashMap<World, Location> spawnLocation = new HashMap<>();
+    public static HashMap<World, Location> spawnVipLocation = new HashMap<>();
 
     public void setupSpawnConfig() {
         if (!getDataFolder().exists()) getDataFolder().mkdir();
@@ -125,6 +128,7 @@ public final class LOBBY extends JavaPlugin {
 
         for (World world : spawnLocation.keySet()) {
             spawnsConfig.set("worlds." + world.getName(), spawnLocation.get(world));
+            spawnsConfig.set("worlds." + world.getName() + ".vip", spawnVipLocation.get(world));
         }
         try {
             spawnsConfig.save(spawnsFile);
@@ -146,8 +150,10 @@ public final class LOBBY extends JavaPlugin {
             if (world == null) continue;
 
             Location loc = (Location) section.get(worldName);
+            Location locVip = (Location) section.get(worldName + ".vip");
 
             spawnLocation.put(world, loc);
+            spawnVipLocation.put(world, loc);
             contador++;
         }
         Bukkit.getConsoleSender().sendMessage("§aCarregando informacoes de §b§l" + contador +" §aspawns");
@@ -213,7 +219,7 @@ public final class LOBBY extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new JoinMessageListener(this), this);
         getServer().getPluginManager().registerEvents(new JumpPadListener(), this);
         getServer().getPluginManager().registerEvents(new NoPermListener(this), this);
-
+        getServer().getPluginManager().registerEvents(new LobbyCustomItens(), this);
 
         getCommand("broadcast").setExecutor(new BroadcastCommand());
         Bukkit.getLogger().info(("§bComando /broadcast iniciado") );
@@ -275,6 +281,7 @@ public final class LOBBY extends JavaPlugin {
         }
         return getConfig().getString("default-tag", "membro");
     };
+
     public String getPlayerPrefix(Player player) {
 
         String tag = getPlayerTag(player);
@@ -329,6 +336,13 @@ public final class LOBBY extends JavaPlugin {
     public Location getWorldSpawn(World world) {
         if (spawnLocation.containsKey(world)) {
             return spawnLocation.get(world);
+        }
+        return world.getSpawnLocation();
+    }
+
+    public Location getWorldVipSpawn(World world) {
+        if (spawnVipLocation.containsKey(world)) {
+            return spawnVipLocation.get(world);
         }
         return world.getSpawnLocation();
     }

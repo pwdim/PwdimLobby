@@ -6,6 +6,7 @@ import fr.mrmicky.fastboard.FastBoard;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,7 +16,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class JoinMessageListener implements Listener {
@@ -30,6 +30,7 @@ public class JoinMessageListener implements Listener {
     @EventHandler(priority = EventPriority.LOW)
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
+        p.playSound(p.getLocation(), Sound.PORTAL_TRAVEL, 1.0f, 1.0f);
 
         p.setDisplayName(plugin.getPlayerPrefix(p) + p.getName());
         p.setPlayerListName(plugin.getPlayerPrefix(p) + p.getName());
@@ -131,5 +132,8 @@ public class JoinMessageListener implements Listener {
         board.updateLine(3, ColorUtils.color(online));
         board.updateLine(4, ColorUtils.color(" "));
         board.updateLine(5, footer);
+
+
+
     }
 }
