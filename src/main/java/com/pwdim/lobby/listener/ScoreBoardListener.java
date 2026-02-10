@@ -1,10 +1,7 @@
 package com.pwdim.lobby.listener;
 
 import com.pwdim.lobby.LOBBY;
-import com.pwdim.lobby.utils.ColorUtils;
 import fr.mrmicky.fastboard.FastBoard;
-import org.bukkit.Bukkit;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

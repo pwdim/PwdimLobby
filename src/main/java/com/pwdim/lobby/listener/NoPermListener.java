@@ -1,11 +1,9 @@
 package com.pwdim.lobby.listener;
 
+
 import com.pwdim.lobby.LOBBY;
-import com.pwdim.lobby.utils.ColorUtils;
-import org.bukkit.Bukkit;
+import com.pwdim.lobby.utils.ConfigUtils;
 import org.bukkit.command.Command;
-import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -35,13 +33,13 @@ public class NoPermListener implements Listener {
 
         if (cmd == null) {
             e.setCancelled(true);
-            FileConfiguration config = Bukkit.getPluginManager().getPlugin("Lobby").getConfig();
-            String msg = config.getString("server.no-cmd-message", "&cComando não encontrado.");
 
-            p.sendMessage(ColorUtils.color(msg));
+
+            p.sendMessage(ConfigUtils.noCommandMessage());
         }
 
 
+        assert cmd != null;
         if (cmd.getPermission() == null || cmd.getPermission().isEmpty()) {
             return;
         }
@@ -49,10 +47,8 @@ public class NoPermListener implements Listener {
         if (!p.hasPermission(cmd.getPermission())) {
             e.setCancelled(true);
 
-            FileConfiguration config = Bukkit.getPluginManager().getPlugin("Lobby").getConfig();
-            String msg = config.getString("server.no-perm-message", "&cVocê não possui permissão para executar esse comando!");
-
-            p.sendMessage(ColorUtils.color(msg));
+            p.sendMessage(ConfigUtils.noPermMessage());
         }
     }
-}
+
+} 

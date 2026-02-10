@@ -1,33 +1,34 @@
 package com.pwdim.lobby.listener;
 
+
+
 import com.pwdim.lobby.LOBBY;
-import com.pwdim.lobby.utils.ColorUtils;
+import com.pwdim.lobby.utils.MyUtils;
 import fr.mrmicky.fastboard.FastBoard;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.UUID;
+
 
 public class JoinMessageListener implements Listener {
-
     private final LOBBY plugin;
-
     public JoinMessageListener(LOBBY plugin) {
         this.plugin = plugin;
     }
 
 
-    @EventHandler(priority = EventPriority.LOW)
+
+    @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
 
@@ -41,25 +42,32 @@ public class JoinMessageListener implements Listener {
         p.setHealth(20);
 
 
-        Random random = new Random();
+
+        ConfigurationSection worldSection = Bukkit.getPluginManager().getPlugin("Lobby").getConfig().getConfigurationSection("server");
 
 
-        double coordX = -1.0 + (1.0 - (-1.0)) * random.nextDouble();
+        String lobbyWorld = worldSection.getString(".lobby-world", "world");
 
-        double coordY = -1.0 + (1.0 - (-1.0)) * random.nextDouble();
 
-        Location spawn = new Location(plugin.getServer().getWorld("world"), coordX, 60, coordY, -90, 0);
-        Location spawnVip = new Location(plugin.getServer().getWorld("world"), coordX, 62, coordY, -90, 0);
+
+        World spawnWorld = plugin.getServer().getWorld(lobbyWorld);
+        Location spawn = plugin.getWorldSpawn(spawnWorld);
+
+
+
+
+        Location spawnVip = plugin.getWorldVipSpawn(spawnWorld);
 
         String JOIN_MSG =
                 "&c&l&m-----&6&l&m-----&e&l&m-----&a&l&m-----&b&l&m-----&9&l&m-----&r\n" +
-                "%s entrou no servidor! \n" +
-                "&c&l&m-----&6&l&m-----&e&l&m-----&a&l&m-----&b&l&m-----&9&l&m-----&r";
+                        "%s entrou no servidor! \n" +
+                        "&c&l&m-----&6&l&m-----&e&l&m-----&a&l&m-----&b&l&m-----&9&l&m-----&r";
+
 
 
         p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 100000, 1, false, false));
 
-        if (plugin.getVanishedPlayers().contains(p)) {
+        if (plugin.getVanishedPlayers().contains(p.getUniqueId())) {
             e.setJoinMessage("");
             p.teleport(spawnVip);
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
@@ -69,13 +77,15 @@ public class JoinMessageListener implements Listener {
             }, 1L);
         }
 
+
         else if (p.hasPermission("lobby.vip")) {
-            e.setJoinMessage(ColorUtils.color(JOIN_MSG, p.getDisplayName()));
+            e.setJoinMessage(MyUtils.color(JOIN_MSG, p.getDisplayName()));
             p.teleport(spawnVip);
 
-            p.setAllowFlight(true);
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
+                p.setAllowFlight(true);
                 p.setFlying(true);
+                p.setGameMode(GameMode.ADVENTURE);
             }, 1L);
         }
 
@@ -84,13 +94,12 @@ public class JoinMessageListener implements Listener {
             p.teleport(spawn);
             p.setAllowFlight(false);
             p.setFlying(false);
+            p.setGameMode(GameMode.ADVENTURE);
         }
         p.showPlayer(p);
 
         for (Player target : Bukkit.getOnlinePlayers()) {
-
-            if (plugin.getVanishedPlayers().contains(target)) {
-
+            if (plugin.getVanishedPlayers().contains(target.getUniqueId())) {
                 if (!p.hasPermission("staff.vanish")) {
                     p.hidePlayer(target);
                     target.showPlayer(p);
@@ -103,8 +112,9 @@ public class JoinMessageListener implements Listener {
             }
         }
 
-        for (Player vanishedPlayer : plugin.getVanishedPlayers()) {
+        for (UUID vanishedUUID : plugin.getVanishedPlayers()) {
             if (!p.hasPermission("staff.vanish")) {
+                Player vanishedPlayer = Bukkit.getPlayer(vanishedUUID);
                 p.hidePlayer(vanishedPlayer);
                 p.showPlayer(p);
                 vanishedPlayer.showPlayer(p);
@@ -114,22 +124,22 @@ public class JoinMessageListener implements Listener {
 
 
         FastBoard board = new FastBoard(p);
-        String title = ColorUtils.color("&B&LPWDIM");
-        String footer = ColorUtils.color("&b&oplay.pwdim.com");
-        String online = ColorUtils.color("&fOnline: &b&o" + Bukkit.getOnlinePlayers().size());
-        plugin.getBoards().put(p.getUniqueId()  , board);
+        String title = MyUtils.color("&B&LPWDIM");
+        String footer = MyUtils.color("&b&oplay.pwdim.com");
+        String online = MyUtils.color("&fOnline: &b&o" + Bukkit.getOnlinePlayers().size());
+        plugin.getBoards().put(p.getUniqueId() , board);
         String selectTag = plugin.getPlayerTag(p);
 
         ConfigurationSection section = Bukkit.getPluginManager().getPlugin("Lobby").getConfig().getConfigurationSection("tags");
 
-        String type = section.getString(selectTag + ".type");
+        String type = section.getString(plugin.getPlayerRank(p.getUniqueId()) + ".type");
 
 
         board.updateTitle(title);
-        board.updateLine(1, ColorUtils.color("&fRank: %s&f", type));
-        board.updateLine(2, ColorUtils.color(" "));
-        board.updateLine(3, ColorUtils.color(online));
-        board.updateLine(4, ColorUtils.color(" "));
+        board.updateLine(1, MyUtils.color("&fRank: %s&f", type));
+        board.updateLine(2, MyUtils.color(" "));
+        board.updateLine(3, MyUtils.color(online));
+        board.updateLine(4, MyUtils.color(" "));
         board.updateLine(5, footer);
     }
-}
+} 

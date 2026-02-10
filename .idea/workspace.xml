@@ -4,11 +4,138 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b7c29d8-ec20-470d-98dd-b9df33242ba0" name="Changes" comment="" />
+    <list default="true" id="9b7c29d8-ec20-470d-98dd-b9df33242ba0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/AccountCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/ChatToggleCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/GroupCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/HologramCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/SetGroupCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/SetSpawnCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/SpeedCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/StaffChatCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/database/ConnectDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/database/SaveDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/events/FirstLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/events/RegisterPlayerEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/itens/KangarooItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/itens/ProfileItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/manager/PermissionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/manager/ServerIDManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/utils/ConfigUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/utils/HologramUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lobby.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml.releaseBackup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/release.properties" beforeDir="false" afterPath="$PROJECT_DIR$/release.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/LOBBY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/LOBBY.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/BroadcastCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/BroadcastCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/BuildCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/BuildCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/FlyCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/FlyCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/GameModeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/GameModeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/MotdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/MotdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/RCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/RCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/ReloadCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/ReloadCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/SetSpawnCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/SpawnCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/SpawnCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/StaffChatCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/TagCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/TagCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/TellCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/TellCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/VanishCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/commands/staff/VanishCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/events/ChatEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/events/ChatEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/listener/JoinMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/listener/JoinMessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/listener/JumpPadListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/listener/JumpPadListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/listener/LobbyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/listener/LobbyListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/listener/NoPermListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/listener/NoPermListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/listener/ScoreBoardListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/listener/ScoreBoardListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/utils/ColorUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pwdim/lobby/utils/MyUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Lobby-1.0.1-ALPHA-shaded.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Lobby-1.0.1-ALPHA.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/LOBBY$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/LOBBY$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/LOBBY.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/BroadcastCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/BuildCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/FlyCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/GameModeCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/MotdCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/PreferencesCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/RCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/ReloadCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/SetSpawnCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/SpawnCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/StaffChatCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/TagCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/TellCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/commands/VanishCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/events/ChatEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/listener/JoinMessageListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/listener/JumpPadListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/listener/LobbyListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/listener/NoPermListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/listener/ScoreBoardListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/pwdim/lobby/utils/ColorUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-Lobby-1.0.1-ALPHA.jar" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/build.gradle">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Lobby" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Lobby" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Lobby" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -26,49 +153,82 @@
     &quot;assignee&quot;: &quot;pwdim&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/pwdim/PwdimLobby",
-    "accountId": "1809ee22-c230-4cd9-9dee-5ce57454ccbe"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/pwdim/PwdimLobby.git&quot;,
+    &quot;accountId&quot;: &quot;a5d18f0a-dd10-4ed5-a409-65f4f8a69f3d&quot;
   }
-}]]></component>
+}</component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-9.3.0-bin/79n14ral3mx1ozqr3csh2u872/gradle-9.3.0" javaHome="$USER_HOME$/.jdks/graalvm-jdk-17.0.12" gradleVersion="9.3.0" />
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="35wKwkm6EmAXnS2NJVREFwBYwBk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Maven.Lobby [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Lobby [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.TUTORIAL [org.apache.maven.plugins:maven-release-plugin:3.0.1:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.TUTORIAL [org.apache.maven.plugins:maven-release-plugin:3.0.1:prepare].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.TUTORIAL [org.apache.maven.plugins:maven-release-plugin:3.0.1:rollback].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.TUTORIAL [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.TUTORIAL package.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.55632186&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle./home/pedroovidio/Documentos/IntelliJ/PwdimLobby/build.gradle.executor": "Run",
+    "Gradle.PwdimLobby [jar].executor": "Run",
+    "Maven.Lobby [clean].executor": "Run",
+    "Maven.Lobby [compile].executor": "Run",
+    "Maven.Lobby [package].executor": "Run",
+    "Maven.Lobby [test].executor": "Run",
+    "Maven.TUTORIAL [org.apache.maven.plugins:maven-release-plugin:3.0.1:clean].executor": "Run",
+    "Maven.TUTORIAL [org.apache.maven.plugins:maven-release-plugin:3.0.1:prepare].executor": "Run",
+    "Maven.TUTORIAL [org.apache.maven.plugins:maven-release-plugin:3.0.1:rollback].executor": "Run",
+    "Maven.TUTORIAL [package].executor": "Run",
+    "Maven.TUTORIAL package.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "/home/pedroovidio/.local/share/JetBrains/IntelliJIdea2025.3/Shell Script/shellcheck",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/pedroovidio/IdeaProjects/PwdimLobby",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.55632186",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pedro\Downloads\PwdimLobby\src\main\resources" />
+      <recent name="C:\Users\pedro\Downloads\PwdimLobby\src\main\java\com\pwdim\lobby" />
       <recent name="C:\Users\pedro\Downloads\TUTORIAL\.idea" />
       <recent name="C:\Users\pedro\Downloads\TUTORIAL" />
       <recent name="C:\Users\pedro\Downloads\TUTORIAL\src" />
-      <recent name="C:\Users\pedro\Downloads\TUTORIAL\src\main\resources" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -76,7 +236,80 @@
       <command value="listener" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.PwdimLobby [jar]">
+    <configuration name="PwdimLobby [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PwdimLobby [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="/home/pedroovidio/Documentos/IntelliJ/PwdimLobby/build.gradle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/build.gradle" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
     <configuration name="TUTORIAL package" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -107,6 +340,21 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.PwdimLobby [jar]" />
+        <item itemvalue="Gradle.PwdimLobby [clean]" />
+        <item itemvalue="Gradle./home/pedroovidio/Documentos/IntelliJ/PwdimLobby/build.gradle" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -115,7 +363,48 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764015935518</updated>
+      <workItem from="1767967596686" duration="44000" />
+      <workItem from="1767967836882" duration="12000" />
+      <workItem from="1767982676874" duration="54000" />
+      <workItem from="1768140025454" duration="12278000" />
+      <workItem from="1768247943536" duration="6447000" />
+      <workItem from="1768329403114" duration="54000" />
+      <workItem from="1768494561655" duration="165000" />
+      <workItem from="1768494756462" duration="22000" />
+      <workItem from="1768496305466" duration="1280000" />
+      <workItem from="1768511911004" duration="58000" />
+      <workItem from="1768527804019" duration="576000" />
+      <workItem from="1768528441095" duration="271000" />
+      <workItem from="1768528762826" duration="2621000" />
+      <workItem from="1768663976536" duration="38000" />
+      <workItem from="1769870527685" duration="32000" />
+      <workItem from="1770226958888" duration="283000" />
+      <workItem from="1770276677345" duration="106000" />
+      <workItem from="1770287936088" duration="1712000" />
+      <workItem from="1770307960374" duration="107000" />
+      <workItem from="1770394508579" duration="2000" />
+      <workItem from="1770394527734" duration="2000" />
+      <workItem from="1770394578400" duration="1000" />
+      <workItem from="1770760480854" duration="15000" />
+      <workItem from="1770760506198" duration="438000" />
+      <workItem from="1770760956965" duration="2401000" />
+      <workItem from="1770763724702" duration="1816000" />
+      <workItem from="1770765835581" duration="4000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

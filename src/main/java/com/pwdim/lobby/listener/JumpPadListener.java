@@ -1,7 +1,6 @@
 package com.pwdim.lobby.listener;
 
 
-import com.pwdim.lobby.utils.ColorUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
@@ -20,7 +19,7 @@ public class JumpPadListener implements Listener {
         Player p = event.getPlayer();
         Vector v = event.getPlayer().getLocation().getDirection();
         if(p.getLocation().subtract(0, 1, 0).getBlock().getType() == Material.SLIME_BLOCK){
-            p.setVelocity(new Vector(1, 1, 0));
+            p.setVelocity(new Vector(p.getLocation().getDirection().getX(), 1.5, p.getLocation().getDirection().getZ()));
         }
     }
 

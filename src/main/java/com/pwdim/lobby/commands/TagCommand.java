@@ -1,22 +1,18 @@
 package com.pwdim.lobby.commands;
 
+
 import com.pwdim.lobby.LOBBY;
-import com.pwdim.lobby.utils.ColorUtils;
+import com.pwdim.lobby.utils.MyUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.player.PlayerJoinEvent;
-
-import java.util.ArrayList;
 
 public class TagCommand implements CommandExecutor {
 
     private final LOBBY plugin;
-
     public TagCommand(LOBBY plugin) {
         this.plugin = plugin;
     }
@@ -47,11 +43,13 @@ public class TagCommand implements CommandExecutor {
                     }
                 }
 
+
                 if (encontrouTag) {
-                    p.sendMessage(ColorUtils.color(sb.toString()));
+                    p.sendMessage(MyUtils.color(sb.toString()));
                 } else {
-                    p.sendMessage(ColorUtils.color("&cVocê não possui nenhuma tag disponível. &eAdquira mais em &b&oloja.pwdim.com."));
+                    p.sendMessage(MyUtils.color("&cVocê não possui nenhuma tag disponível. &eAdquira mais em &b&oloja.pwdim.com."));
                 }
+
             } else {
                 String selectedTag = args[0].toLowerCase();
 
@@ -62,27 +60,23 @@ public class TagCommand implements CommandExecutor {
 
                 if (section.contains(selectedTag) && p.hasPermission(perm)) {
                     LOBBY.playerTag.put(p.getUniqueId(), selectedTag);
-                    p.setDisplayName(ColorUtils.color(prefix +p.getName()));
-                    p.setCustomName(ColorUtils.color(color +p.getName()));
-                    p.setPlayerListName(ColorUtils.color(prefix +p.getName()));
-                    p.sendMessage(ColorUtils.color("&aTag alterada para "+ type+"&r"));
+                    p.setDisplayName(MyUtils.color(prefix +p.getName()));
+                    p.setCustomName(MyUtils.color(color +p.getName()));
+                    p.setPlayerListName(MyUtils.color(prefix +p.getName()));
+                    p.sendMessage(MyUtils.color("&aTag alterada para "+ type+"&r"));
                     plugin.setNameTag(p);
 
                 } else {
-                    p.sendMessage(ColorUtils.color("&cVocê não tem essa tag ou ela não existe!"));
+                    p.sendMessage(MyUtils.color("&cVocê não tem essa tag ou ela não existe!"));
                 }
-
             }
-
         } else {
             String target = args[0];
             Player p = Bukkit.getPlayer(target);
 
-
             if (args.length != 2 || !section.contains(args[1].toLowerCase()) || p == null) {
-                sender.sendMessage(ColorUtils.color("&cUse: /tag <player> <tag>"));
+                sender.sendMessage(MyUtils.color("&cUse: /tag <player> <tag>"));
             } else {
-
                 String selectedTag = args[1].toLowerCase();
                 String perm = section.getString(selectedTag + ".permission");
                 String prefix = section.getString(selectedTag + ".prefix");
@@ -91,35 +85,21 @@ public class TagCommand implements CommandExecutor {
 
                 if (p.hasPermission(perm)) {
                     LOBBY.playerTag.put(p.getUniqueId(), selectedTag);
-                    p.setDisplayName(ColorUtils.color(prefix +p.getName()));
-                    p.setCustomName(ColorUtils.color(color +p.getName()));
-                    p.setPlayerListName(ColorUtils.color(prefix +p.getName()));
-                    p.sendMessage(ColorUtils.color("&aTag alterada para "+ prefix+"&r"));
+                    p.setDisplayName(MyUtils.color(prefix +p.getName()));
+                    p.setCustomName(MyUtils.color(color +p.getName()));
+                    p.setPlayerListName(MyUtils.color(prefix +p.getName()));
+                    p.sendMessage(MyUtils.color("&aTag alterada para "+ prefix+"&r"));
 
-                    sender.sendMessage(ColorUtils.color("&aTag de " + p.getName() + " alterada para " + prefix));
+                    sender.sendMessage(MyUtils.color("&aTag de " + p.getName() + " alterada para " + prefix));
                     plugin.setNameTag(p);
                 } else {
-                    sender.sendMessage(ColorUtils.color("&cO jogador não tem essa tag!"));
+                    sender.sendMessage(MyUtils.color("&cO jogador não tem essa tag!"));
                 }
             }
         }
-
 
         plugin.savePlayersData();
 
         return true;
     }
-
-    @EventHandler
-    public void defaultTag(PlayerJoinEvent e) {
-        ConfigurationSection section = Bukkit.getPluginManager().getPlugin("Lobby").getConfig().getConfigurationSection("tags");
-        Player p = e.getPlayer();
-
-        String selectedTag = plugin.getPlayerTag(p);
-        String perm = section.getString(selectedTag + ".permission");
-
-        if (!(p.hasPermission(perm))) {
-            Bukkit.dispatchCommand(Bukkit.getServer().getConsoleSender(), "tag " + p.getName() + " membro");
-        }
-    }
-}
+} 
